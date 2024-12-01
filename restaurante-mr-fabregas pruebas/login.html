@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login 2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <!--button-- class="back-button" onclick="window.history.back();">←</button--> <!-- Botón de volver -->
+    <div class="login-container">
+        <img src="images/logo.png" alt="Logo" class="logo"> <!-- Cambia la ruta a tu logo -->
+        <form action="login.php" method="post">
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit"><i class="fas fa-sign-in-alt icon"></i> Iniciar Sesión</button>
+        </form>
+        <a href="olvidar_contrasena.html">Olvidar Contraseña</a> <!-- Enlace para olvidar contraseña -->
+        <a <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Registrarse</button>
+        </a>
+    </div>
+    
+    
+<!-- Modal de Registro -->
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar Modal">&times;</span>
+    <form class="modal-content" action="/action_page.php">
+      <div class="container">
+        <h1>Registrarse</h1> 
+        <p>Completa este formulario para crear una cuenta.</p>
+        <hr>
+        <label for="email"><b>Correo Electrónico</b></label>
+        <input type="text" placeholder="Ingresa tu correo" name="email" required>
+  
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Ingresa tu contraseña" name="psw" required>
+  
+        <label for="psw-repeat"><b>Repetir Contraseña</b></label>
+        <input type="password" placeholder="Repite tu contraseña" name="psw-repeat" required>
+        
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordar
+        </label>
+  
+        <p>Al crear una cuenta aceptas nuestros <a href="#" style="color:dodgerblue">Términos y Privacidad</a>.</p>
+  
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+          <button type="submit" class="signupbtn">Registrarse</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <!--footer>
+        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+    </footer-->
+</body>
+</html>

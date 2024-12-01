@@ -1,0 +1,102 @@
+/* Incluir la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+:root {
+    --color-rojo: #E20912;   /* Rojo */
+    --color-blanco: #FFFFFF; /* Blanco */
+    --color-negro: #191716;  /* Negro */
+    --color-amarillo: #FFD60A; /* Amarillo */
+    --color-naranja: #FFAD24;  /* Naranja */
+}
+/* Estilos generales para el inicio */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-blanco); /* Fondo blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la vista */
+}
+
+/* Estilos del contenedor del formulario */
+.login-container {
+    background-color: white; /* Fondo negro */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* Ancho completo hasta el máximo permitido */
+    text-align: center; /* Centrar texto */
+}
+
+/* Estilos del logo */
+.logo {
+    width: 120px; /* Logo más pequeño */
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+}
+
+/* Estilos de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px; /* Espacio entre campos */
+    border: 1px solid #ccc; /* Sin borde */
+    border-radius: 15px; /* Esquinas redondeadas */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos del botón de inicio de sesión */
+button {
+    padding: 10px;
+    background-color: var(--color-amarillo); /* Color de fondo amarillo */
+    color: var(--color-negro); /* Texto negro */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Esquinas redondeadas */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    display: flex; /* Permitir que el ícono y el texto estén en línea */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+button:hover {
+    background-color: var(--color-naranja); /* Cambiar a naranja al pasar el cursor */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+/* Estilos del ícono dentro del botón */
+button .icon {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos de los enlaces de registro */
+a {
+    color: #ccc; /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin-top: 15px; /* Espacio arriba */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+a:hover {
+    color: var(--color-amarillo); /* Cambiar a amarillo al pasar el cursor */
+}
+
+/* Estilos generales para el footer */
+footer {
+    background-color: var(--color-negro); /* Color de fondo del footer */
+    color: var(--color-blanco); /* Color del texto en el footer */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

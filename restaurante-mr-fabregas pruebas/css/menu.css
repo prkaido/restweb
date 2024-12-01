@@ -1,0 +1,375 @@
+/* Incluir la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Estilos generales para el inicio */
+body { 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* Colores de la paleta */
+:root {
+    --color-rojo: #E20912;   /* Rojo */
+    --color-blanco: #FFFFFF; /* Blanco */
+    --color-negro: #191716;  /* Negro */
+    --color-amarillo: #FFD60A; /* Amarillo */
+    --color-naranja: #FFAD24;  /* Naranja */
+}
+
+.top-bar {     
+    display: flex;
+    align-items: center; /* Centra el logo y la barra de búsqueda horizontalmente */
+    padding: 10px;
+    background-image: url(/images/brazas.jpg); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+    background-position: center; /* Centra la imagen */
+    position: relative; /* Permite posicionar los elementos hijos de forma absoluta */
+    transition: padding 0.3s ease; /* Suave transición para el padding */
+}
+
+.logo {
+    width: 120px; /* Ancho del logo */
+    transition: transform 0.3s ease; /* Suave transición para el desplazamiento */
+    margin-right: 20px; /* Espacio a la derecha del logo */
+}
+.user-icon {
+    /*margin-left: auto;*/
+    padding-left: 10px;
+}
+
+.user-icon a {
+    font-size: 24px;
+    color: var(--color-rojo); /* Blanco para el ícono de usuario */
+    opacity: 87%;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* Permite posicionar la barra de búsqueda encima del ícono */
+    margin-left: auto; /* Empuja el contenedor de búsqueda a la derecha */
+}
+.menu-button{
+    width: 50px;
+    justify-content: flex-start;
+    border: 2px transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--color-rojo);
+    opacity: 87%;
+    background-color:transparent
+ }
+
+ .search-bar {
+    position: absolute;
+    right: 0; /* Alinea la barra al borde derecho del contenedor */
+    width: 0; /* Inicia con un ancho de 0 */
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    transition: width 0.3s ease, padding 0.3s ease; /* Suave transición para expandir la barra */
+    background-color: transparent; /* Fondo transparente */
+    z-index: 1; /* Para que la barra de búsqueda se superponga al ícono */
+}
+
+.search-container.active .search-bar {
+    background-color: #FFFFFF;
+    width: 200px; /* Expande la barra de búsqueda cuando esté activa */
+    padding: 10px 15px; /* Añade padding al expandirse */
+}
+
+.search-icon {
+    background: transparent;
+    border: none;
+    color: var(--color-rojo); /* Cambia el color del ícono */
+    opacity: 87%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px; /* Espacio entre la barra de búsqueda y el ícono */
+    z-index: 2; /* Para que el ícono esté por encima de la barra inicialmente */
+}
+
+.top-bar.active .logo {
+    transform: translateX(-200px); /* Desplaza el logo hacia la izquierda al activar la búsqueda */
+}
+
+/* Estilos de la barra inferior de navegación */
+.bottom-nav{
+    background-color: var(--color-rojo); /* Fondo inicial negro */
+    padding: 10px;
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Transiciones suaves para el fondo y padding */
+}
+
+.bottom-nav ul { 
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+ 
+.bottom-nav a {
+    color: var(--color-blanco); /* Blanco para los enlaces */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px; /* Espaciado alrededor de los enlaces */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para el color y el efecto hover */
+}
+
+.bottom-nav a:hover {
+    color: var(--color-amarillo); /* Cambia a amarillo cuando se pasa el cursor */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+
+/* Estilo de la barra de navegación al hacer scroll */
+.sticky-nav {
+    background-color: var(--color-rojo); /* Cambia el fondo a rojo */
+    padding: 5px 0; /* Reducir el padding para que la barra se vea más pequeña */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+}
+/* Estilos del botón de carrito */
+.cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #db0000;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 70px;
+    max-width: fit-content;
+}
+
+
+/* Ventana flotante del carrito */
+.cart-modal {
+    display: none; /* Oculto al inicio */
+    position: fixed;
+    top: 0;
+    right: -400px; /* Inicialmente fuera de la pantalla */
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.5s ease, opacity 0.3s ease; /* Transición suave */
+    opacity: 0; /* Invisible al cargar */
+}
+
+.cart-modal.active {
+    display: flex; /* Muestra el carrito */
+    right: 0; /* Desliza el carrito hacia la pantalla */
+    opacity: 1; /* Visible */
+}
+
+/* Contenido del carrito */
+.cart-modal-content {
+    position: relative;
+    height: 100%;
+}
+
+.close-cart {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #E20912;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item h4 {
+    margin: 0;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-quantity input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+/* Contenedor del total y botón de pago */
+.cart-total {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 15px 0; /* Espaciado para el total y botón */
+    border-top: 1px solid #ccc; /* Línea divisoria superior */
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Botón de pago */
+.checkout-btn {
+    width: 100%;
+    background-color: var(--color-amarillo);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: var(--color-naranja);
+    box-shadow: 0px 0px 50px #fbff00ad;
+}
+/* Estilos para la página del menú */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;   
+    padding-bottom: 15px;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.menu-item h4 {
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.menu-item img {
+    width: 100%; /* Ajusta el tamaño de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 10px; /* Redondea las esquinas de la imagen */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--color-amarillo);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+/* Estilos generales para el footer */
+footer {
+    background-color: var(--color-negro); /* Color de fondo del footer */
+    color: var(--color-blanco); /* Color del texto en el footer */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex-basis: 23%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: var(--color-amarillo);
+    margin-bottom: 10px;
+}
+
+.footer-section p, 
+.footer-section a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    color: var(--color-naranja);
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #FFD60A; /* Cambia el color al pasar el cursor */
+}
+
+
+body {
+    font-size: clamp(12px, 2vw, 18px);
+}
+
+h1 {
+    font-size: clamp(20px, 4vw, 32px);
+}
+
+h2 {
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+.cart-total h3, .menu-item h4, .menu-item p {
+    font-size: clamp(10px, 2.5vw, 16px);
+}

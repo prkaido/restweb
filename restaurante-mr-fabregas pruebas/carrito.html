@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Flotante</title>
+    <link rel="stylesheet" href="css/carrito.css">
+    <script src="js/cart.js" defer></script>
+</head>
+<body>
+    <!-- Botón para abrir el carrito -->
+    <button class="cart-button" onclick="toggleCart()">🛒  (<span id="cart-count">0</span>)</button>
+
+    <!-- Ventana flotante del carrito -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-price">0</span> COP</h3>
+                <button class="checkout-btn" onclick="checkout()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

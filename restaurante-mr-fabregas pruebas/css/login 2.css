@@ -1,0 +1,208 @@
+/* Incluir la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+:root {
+    --color-rojo: #E20912;   /* Rojo */
+    --color-blanco: #FFFFFF; /* Blanco */
+    --color-negro: #191716;  /* Negro */
+    --color-amarillo: #FFD60A; /* Amarillo */
+    --color-naranja: #FFAD24;  /* Naranja */
+}
+/* Estilos generales para el inicio */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/images/Barril.webp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la vista */
+}
+
+/* Estilos del contenedor del formulario */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.150) ; /* Fondo negro */
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.782); /* Sombra suave */
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* Ancho completo hasta el máximo permitido */
+    text-align: center; /* Centrar texto */
+}
+
+/* Estilos del logo */
+.logo {
+    width: 120px; /* Logo más pequeño */ 
+    box-shadow: 0 4px 55px rgba(223, 163, 0, 0.782);
+    border-radius: 50%;
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+}
+
+/* Estilos de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px; /* Espacio entre campos */
+    border: 1px solid #ccc; /* Sin borde */
+    border-radius: 15px; /* Esquinas redondeadas */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos del botón de inicio de sesión */
+button {
+    padding: 10px;
+    background-color: var(--color-amarillo); /* Color de fondo amarillo */
+    color: var(--color-negro); /* Texto negro */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Esquinas redondeadas */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    display: flex; /* Permitir que el ícono y el texto estén en línea */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+button:hover {
+    background-color: var(--color-naranja); /* Cambiar a naranja al pasar el cursor */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    box-shadow: 0 4px 55px rgba(65, 47, 0, 0.55);
+}
+
+
+/* Estilos de los enlaces de registro */
+a {
+    color: #ffffff; /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin-top: 15px; /* Espacio arriba */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+a:hover {
+    color: var(--color-amarillo); /* Cambiar a amarillo al pasar el cursor */
+}
+
+/* Estilos generales para el footer */
+footer {
+    background-color: var(--color-negro); /* Color de fondo del footer */
+    color: var(--color-blanco); /* Color del texto en el footer */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/*registro*/
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 25px; /* Bordes redondeados */
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: transparent;/* Color rojo para cancelar */
+  border-radius: 20px; /* Bordes redondeados */
+}
+.cancelbtn:hover {
+    background-color: #E20912
+
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.icon {
+  font-size: 110%;
+  color: #ff7b00; /* Color de la icono */
+  padding: 0 10px  0;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Mantener en su lugar */
+  z-index: 1; /* Queda por encima */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  overflow: auto; /* Habilitar scroll si es necesario */
+  background-color: rgba(71, 78, 93, 0.61); /* Fondo oscuro con opacidad */
+  padding-top: 50px;
+}
+
+.modal-content {
+  background-color: #fefefe; /* Fondo del modal */
+  margin: 5% auto 15% auto; /* Margen superior e inferior y centrado */
+  border: 1px solid #888;
+  border-radius: 15px ;
+  width: 80%; /* Puede ser más o menos, dependiendo del tamaño de la pantalla */
+}
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336; /* Color al pasar el ratón */
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}

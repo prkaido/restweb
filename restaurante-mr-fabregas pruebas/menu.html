@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/menu.js" defer></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <div class="top-bar">
+            <button class="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <img src="images/logo.png" alt="Logo del Restaurante" class="logo">
+            <div class="search-container">
+                <a class="search-icon" id="search-toggle">
+                    <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+                </a>
+                <input type="text" class="search-bar" id="search-bar" placeholder="Buscar...">
+            </div>
+            <div class="user-icon">
+                <a href="login.html"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </div>
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="Perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <main>
+        <h2>Menú</h2>
+
+        <!-- Subcategoría Entradas -->
+        <h3>Entradas</h3>
+        <div id="entradas" class="menu-container">
+            <div class="menu-item">
+                <h4>Canastas de platano</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>4 Canastas de platano con ahogao.</p>
+                <h5> $7000 COP</h5>
+                <!-- Botón para abrir el modal -->
+                <button id="openModalBtn">Ver Detalles</button>    
+            </div>
+            <div class="menu-item">
+                <h4>Empanadas</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>4 Mini empanadas de queso.</p>
+                <h5> $8000 COP</h5>
+                <button class="add-to-cart" data-id="2" data-name="Empanadas" data-price="8000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Tajadas de platano</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Finas tajadas de platano con suero.</p>
+                <h5> $8000 COP</h5>
+                <button class="add-to-cart" data-id="3" data-name="Tajadas de platano" data-price="8000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Papas criollas al romero</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Papas criollas al romero con queso costeño.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="4" data-name="Papas criollas" data-price="7000">Agregar al carrito</button>
+            </div>
+        </div>
+<!-- Botón para abrir el carrito -->
+<button class="cart-button" onclick="toggleCart()">🛒  (<span id="cart-count">0</span>)</button>
+
+<!-- Ventana flotante del carrito -->
+<div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+        <h2>Tu Carrito</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-total">
+            <h3>Total: $<span id="total-price">0</span> COP</h3>
+            <a href="pago.html" class="checkout-btn">Proceder al Pago</a>
+        </div>
+    </div>
+</div>
+        <!-- Subcategoría Arepas -->
+        <h3>Arepas</h3>
+        <div id="arepas" class="menu-container">
+            <div class="menu-item">
+                <h4>Arepa 1 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de pollo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="5" data-name="Arepa 1" data-price="7000">Agregar al carrito</button>
+               
+            </div>
+            <div class="menu-item">
+                <h4>Arepa 2 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de carne mechada y queso amarillo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="6" data-name="Arepa 2" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Arepa 3 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de pollo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="7" data-name="Arepa 3" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Arepa 4 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de carne mechada y queso amarillo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="8" data-name="Arepa 4" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Arepa 5 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de pollo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="9" data-name="Arepa 5" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Arepa 6 </h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Arepa rellena de carne mechada y queso amarillo.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="10" data-name="Arepa 6" data-price="7000">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <!-- Subcategoría Barril -->
+        <h3>Barril</h3>
+        <div id="barril" class="menu-container">
+            <div class="menu-item">
+                <h4>Papas Bravas</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Papas crujientes con salsa picante.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="11" data-name="Papas Bravas" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Chicharon</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Chistorra frita con pan.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="12" data-name="Chicharon" data-price="7000">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <!-- Subcategoría Postres -->
+        <h3>Postres</h3>
+        <div id="postres" class="menu-container">
+            <div class="menu-item">
+                <h4>Tres Leches</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Bizcocho tradicional con leche evaporada, condensada y crema.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="13" data-name="Tres Leches" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Quesillo</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Flan de caramelo venezolano.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="14" data-name="Quesillo" data-price="7000">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <!-- Subcategoría Bebidas -->
+        <h3>Bebidas</h3>
+        <div id="bebidas" class="menu-container">
+            <div class="menu-item">
+                <h4>Cerveza Artesanal</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Cerveza de barril artesanal.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="15" data-name="Cerveza" data-price="7000">Agregar al carrito</button>
+            </div>
+            <div class="menu-item">
+                <h4>Jugo Natural</h4>
+                <img src="images/Entradas.jpg" alt="Entradas">
+                <p>Jugo de frutas naturales a elegir.</p>
+                <h5> $7000 COP</h5>
+                <button class="add-to-cart" data-id="16" data-name="Jugo" data-price="7000">Agregar al carrito</button>
+            </div>
+        </div>
+    </main>
+
+
+<!-- Modal -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <!-- Detalles del producto -->
+    <div class="product-details">
+      <img src="ruta-de-la-imagen-del-producto" alt="Producto" class="product-image">
+      <h2 class="product-title">Nombre del Producto</h2>
+      <p class="product-description">Descripción del producto...</p>
+      <p class="product-price">$20.400</p>
+
+      <!-- Sección para agregar adicionales -->
+      <h3>Complementa tu pedido</h3>
+      <div class="add-ons">
+        <label>
+          <input type="checkbox" value="Coca Cola 400ml"> Coca Cola 400ml (+ $6.500)
+        </label>
+        <label>
+          <input type="checkbox" value="Coca Cola 1.5L"> Coca Cola 1.5L (+ $13.000)
+        </label>
+      </div>
+
+      <!-- Sección de cantidad -->
+      <div class="quantity-selector">
+        <button id="decreaseQuantity">-</button>
+        <input type="number" id="quantity" value="1" min="1">
+        <button id="increaseQuantity">+</button>
+      </div>
+
+      <!-- Comentarios -->
+      <textarea placeholder="Añade comentarios adicionales"></textarea>
+
+      <!-- Botón para agregar al carrito -->
+      <button class="add-to-cart" data-id="1" data-name="Canastas de platano" data-price="7000">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Restaurante Mr. Fábregas. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

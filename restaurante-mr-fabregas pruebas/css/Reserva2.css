@@ -1,0 +1,105 @@
+/* Colores de la paleta */
+:root {
+    --color-rojo: #E20912;
+    --color-blanco: #FFFFFF;
+    --color-negro: #191716;
+    --color-amarillo: #FFD60A;
+    --color-naranja: #FFAD24;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: montserrat;
+    background-color: var(--color-blanco);
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #E20912;
+}
+
+/* Contenedor de la reserva */
+.reservation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* Estilos del formulario */
+.reservation-form .form-group {
+    margin-bottom: 15px;
+}
+
+.reservation-form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.reservation-form input[type="number"] {
+    max-width: 100px;
+}
+
+.reservation-form input[type="date"],
+.reservation-form input[type="time"] {
+    max-width: 200px;
+}
+/* Botón de enviar */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #E20912;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+}
+.submit-btn:hover {
+    background-color: #FFAD24;
+}
+/* Estilos del footer */
+footer {
+    background-color: #191716;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

@@ -1,0 +1,233 @@
+
+
+/* Estilos generales para el inicio */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Colores de la paleta */
+:root {
+    --color-rojo: #E20912;
+    --color-blanco: #FFFFFF;
+    --color-negro: #191716;
+    --color-amarillo: #FFD60A;
+    --color-naranja: #FFAD24;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-image: url(/images/brazas.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: padding 0.3s ease;
+}
+
+/* Botón de menú */
+.menu-button {
+    width: 50px;
+    justify-content: flex-start;
+    border: 2px transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--color-rojo);
+    background-color: transparent;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+/* Ícono de usuario */
+.user-icon {
+    margin-left: auto;
+}
+
+.user-icon a {
+    font-size: 32px;
+    color: var(--color-rojo);
+}
+
+/* Barra de navegación inferior */
+.bottom-nav {
+    background-color: var(--color-rojo);
+    padding: 10px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.bottom-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bottom-nav a:hover {
+    color: var(--color-amarillo);
+    transform: scale(1.1);
+}
+
+/* Barra de navegación al hacer scroll */
+.sticky-nav {
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    padding: 5px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+main{
+    width: 100%; /* Ocupa todo el ancho disponible */; /* Colapsa los bordes para una apariencia más limpia */
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    contain: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: fit-content;
+}
+button {
+    padding: 10px;
+    background-color: var(--color-amarillo); /* Color de fondo amarillo */
+    color: var(--color-negro); /* Texto negro */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Esquinas redondeadas */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    display: flex; /* Permitir que el ícono y el texto estén en línea */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+
+}
+
+button:hover {
+    background-color: var(--color-naranja); /* Cambiar a naranja al pasar el cursor */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la tabla */
+#cart-items table {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Colapsa los bordes para una apariencia más limpia */
+    border: none;
+}
+
+/* Estilos para las filas y columnas */
+#cart-items td {
+    padding: 10px; /* Espaciado interior en las celdas */
+    border: px solid #ddd; /* Bordes suaves en las celdas */
+    text-align: center; /* Centrar el contenido de las celdas */
+    vertical-align: middle; /* Centrar verticalmente */
+   align-items:center;
+}
+
+/* Contenedor de los botones para alinearlos horizontalmente */
+#cart-items td button.decrease-quantity, #cart-items td button.increase-quantity {
+    display: inline-block; /* Asegura que los botones estén en línea */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 27px; /* Bordes redondeados */
+    margin: 0 5px; /* Espaciado entre los botones */
+    vertical-align: middle; /* Alinea verticalmente con el número */
+}
+@media (max-width: 600px) {
+    /* Hacer que los botones se alineen verticalmente en pantallas pequeñas */
+    #cart-items td button.decrease-quantity, 
+    #cart-items td button.increase-quantity {
+        display: block; /* Botones apilados verticalmente */
+        margin: 5px 0; /* Espaciado vertical entre los botones */
+        width: 100%; /* Ancho completo para que se vean mejor */
+        padding: 5px 10px;
+    }
+}
+
+    /* Alinear el texto de cantidad en el centro */
+    #cart-items td {
+        text-align: center; /* Centrar el contenido */
+    }
+
+/* Ajustar la cantidad para que esté alineada con los botones */
+#cart-items td {
+    text-align: center; /* Centrar el contenido */
+}
+
+
+
+/* Estilos para la columna de los precios */
+#cart-items td:nth-child(3), #cart-items td:nth-child(4) {
+    text-align: right; /* Alinear a la derecha los precios */
+}
+
+/* Estilos para el botón de eliminar producto */
+button.remove-item {
+    background: none;
+    border: none;
+    color: red; /* Color de la 'x' */
+    font-size: 20px; /* Tamaño de la 'x' */
+    cursor: pointer;
+}
+
+button.remove-item:hover {
+    color: darkred; /* Cambia de color cuando el cursor está sobre la 'x' */
+}
+/* Estilos generales para el footer */
+footer {
+    margin-top: 15px;
+    background-color: var(--color-negro); /* Color de fondo del footer */
+    color: var(--color-blanco); /* Color del texto en el footer */
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Estilos de los enlaces */
+a {
+    color: var(--color-blanco); /* Color de texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin-top: 15px; /* Espacio arriba */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+a:hover {
+    color: var(--color-amarillo); /* Cambiar a amarillo al pasar el cursor */
+}
